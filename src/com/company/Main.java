@@ -1,0 +1,89 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+    public static int Hexa_to_Decimal(String s){
+        String s1= "0123456789ABCDEF";
+        s= s.toUpperCase();
+         int value=0;
+        for(int i=0;i<s.length();i++){
+           char c = s.charAt(i);
+           int d= s1.indexOf(c);
+           value=16*value+d;
+
+        }
+        return value;
+
+    }
+
+    public static void main(String[] args) {
+        String hexaNumber;
+        int decimalNumber;
+
+        int [] binaryNumber= new int[100];
+        int i= 1;
+        int j;
+        Scanner sc= new Scanner(System.in);
+        System.out.println("enter the hexa number: ");
+        hexaNumber= sc.nextLine();
+        decimalNumber=Hexa_to_Decimal(hexaNumber);
+        System.out.println("the equvalent decimal number is: "+ decimalNumber);
+
+
+        while(decimalNumber!=0){
+            binaryNumber[i++]= decimalNumber%2;
+            decimalNumber=decimalNumber/2;
+        }
+        System.out.print("the equivalent binary number is: ");
+        for(j=i-1;j>0;j--){
+            System.out.print(binaryNumber[j]+" ");
+        }
+
+
+
+
+    }
+
+
+   /* public static int hex_to_decimal(String s)
+    {
+        String digits = "0123456789ABCDEF";
+        s = s.toUpperCase();
+        int val = 0;
+        for (int i = 0; i < s.length(); i++)
+        {
+            char c = s.charAt(i);
+            int d = digits.indexOf(c);
+            val = 16*val + d;
+        }
+        return val;
+    }
+    public static void main(String args[])
+    {
+        String hexdec_num;
+        int dec_num, i=1, j;
+        int bin_num[] = new int[100];
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Enter Hexadecimal Number : ");
+        hexdec_num = scan.nextLine();
+
+        *//* convert hexadecimal to decimal *//*
+        dec_num = hex_to_decimal(hexdec_num);
+
+        *//* convert decimal to binary *//*
+        while(dec_num != 0)
+        {
+            bin_num[i++] = dec_num%2;
+            dec_num = dec_num/2;
+        }
+
+        System.out.print("Equivalent Binary Number is: ");
+        for(j=i-1; j>0; j--)
+        {
+            System.out.print(bin_num[j]);
+        }
+        System.out.print("\n");
+    }*/
+}
